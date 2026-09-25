@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Friendly AI Tech — Intelligent Business Solutions</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+{% with messages = get_flashed_messages() %}{% if messages %}<div class="flash">{{ messages[0] }}</div>{% endif %}{% endwith %}
+<body data-world="business">
+<canvas id="space"></canvas><div class="cursor-light"></div>
+<header>
+<a class="brand" href="{{ url_for('home') }}"><span class="logo"><i></i></span><span>FRIENDLY <b>AI</b> TECH<small>INTELLIGENCE • AUTOMATION • SOFTWARE</small></span></a>
+<button class="hamb" aria-label="menu">☰</button>
+<nav><a href="#home">HOME</a><a href="#solutions">SOLUTIONS</a><a href="#process">PROCESS</a><a href="{{ url_for('students') }}">STUDENT HUB</a><a href="#contact">CONTACT</a></nav>
+<a class="top-cta" href="#contact">START A PROJECT ↗</a>
+</header>
+
+<main>
+<section class="hero scene" id="home" data-scene="core">
+<div class="hero-copy reveal">
+<p class="eyebrow">AI SOLUTIONS FOR REAL BUSINESS</p>
+<h1>Ideas become<br><em>intelligent.</em></h1>
+<p class="lead">We design AI, automation, data and custom software solutions around real business problems.</p>
+<div class="actions"><a class="button" href="#contact">BUILD WITH US →</a><a class="textlink" href="#solutions">EXPLORE ↓</a></div>
+</div>
+
+<div class="core-stage planet-stage parallax-stage">
+<div class="grid-floor"></div>
+<div class="planet-system" id="planetSystem">
+  <div class="planet-glow"></div>
+  <div class="orbit-line orbit-a"><i></i></div>
+  <div class="orbit-line orbit-b"><i></i></div>
+  <div class="orbit-line orbit-c"><i></i></div>
+  <div class="ai-planet">
+    <div class="planet-shine"></div>
+    <div class="planet-grid"></div>
+    <div class="planet-brand"><small>FRIENDLY</small><strong>AI</strong><b>TECH</b></div>
+  </div>
+  <span class="planet-node pn1">AI</span><span class="planet-node pn2">ML</span><span class="planet-node pn3">LLM</span><span class="planet-node pn4">DATA</span>
+</div>
+<div class="hud h1">FRIENDLY AI CORE <b>CONNECTED</b></div><div class="hud h2">DIGITAL UNIVERSE <b>ACTIVE</b></div>
+</div>
+<div class="scrollhint">SCROLL TO ENTER THE SYSTEM <i></i></div>
+</section>
+
+<section class="solutions scene" id="solutions" data-scene="solutions">
+<div class="section-title reveal"><span>01 / CAPABILITIES</span><h2>Built around the<br><em>problem.</em> Not the hype.</h2></div>
+<div class="flow">
+<a href="#contact" class="flow-item reveal"><b>01</b><i>✦</i><div><h3>Custom AI & Machine Learning</h3><p>Prediction, classification and intelligent decision systems.</p></div><strong>↗</strong></a>
+<a href="#contact" class="flow-item reveal"><b>02</b><i>◉</i><div><h3>AI Agents & Chatbots</h3><p>Business assistants for customers, teams and knowledge.</p></div><strong>↗</strong></a>
+<a href="#contact" class="flow-item reveal"><b>03</b><i>⌁</i><div><h3>RAG & LLM Applications</h3><p>Generative AI grounded in documents and private business data.</p></div><strong>↗</strong></a>
+<a href="#contact" class="flow-item reveal"><b>04</b><i>↻</i><div><h3>Automation</h3><p>Smarter workflows that reduce repetitive manual work.</p></div><strong>↗</strong></a>
+<a href="#contact" class="flow-item reveal"><b>05</b><i>&lt;/&gt;</i><div><h3>Web & Custom Software</h3><p>Modern applications built around your users and workflow.</p></div><strong>↗</strong></a>
+<a href="#contact" class="flow-item reveal"><b>06</b><i>▥</i><div><h3>Analytics & Dashboards</h3><p>Clear visual intelligence from complex business data.</p></div><strong>↗</strong></a>
+</div>
+</section>
+
+<section class="process scene" id="process" data-scene="process">
+<div class="process-orbit"><span class="p-core">F<span>AI</span></span><i></i><i></i><i></i></div>
+<div class="process-copy reveal"><p class="eyebrow">02 / FROM IDEA TO PRODUCT</p><h2>Discover.<br>Design. Build.<br><em>Launch.</em></h2><p>We understand the real problem first, select the right technology, build and test the solution, then prepare it for real use.</p></div>
+<div class="steps reveal"><span><b>01</b>DISCOVER</span><span><b>02</b>DESIGN</span><span><b>03</b>BUILD</span><span><b>04</b>LAUNCH</span></div>
+</section>
+
+<section class="student-gateway scene" data-scene="student">
+<div class="portal"><div class="portal-ring pr1"></div><div class="portal-ring pr2"></div><div class="portal-center">STUDENT<br><b>HUB</b></div></div>
+<div class="gateway-copy reveal"><p class="eyebrow purple">03 / STUDENT DIVISION</p><h2>A second world<br>for <em>builders.</em></h2><p>Internships, technology learning, final-year projects, hands-on development and mentorship — inside a dedicated student experience.</p><div class="tags"><span>15 / 30 DAYS</span><span>ONLINE / OFFLINE</span><span>CERTIFICATE</span><span>MENTORSHIP</span></div><a class="button violet" href="{{ url_for('students') }}">ENTER STUDENT WORLD →</a></div>
+</section>
+
+<section class="contact scene" id="contact" data-scene="contact">
+<div class="contact-field"></div><p class="eyebrow reveal">04 / LET'S BUILD</p><h2 class="reveal">What should we<br><em>create next?</em></h2><p class="lead reveal">Bring the problem. Friendly AI Tech will help shape the technology solution.</p><form class="cloud-form reveal" method="post" action="{{ url_for('business_enquiry') }}">
+<input name="name" placeholder="Your name" required>
+<input name="company" placeholder="Company name">
+<input name="email" type="email" placeholder="Email" required>
+<input name="phone" placeholder="Phone" required>
+<select name="service" required><option value="">Select service</option><option>AI / Machine Learning</option><option>AI Agent / Chatbot</option><option>RAG / LLM Application</option><option>Business Automation</option><option>Web / Custom Software</option><option>Data Analytics</option></select>
+<textarea name="message" placeholder="Tell us about your project" required></textarea>
+<button class="button" type="submit">SEND PROJECT ENQUIRY →</button>
+</form>
+</section>
+</main>
+
+<footer><span>FRIENDLY <b>AI</b> TECH</span><span>AI • AUTOMATION • SOFTWARE • INNOVATION</span><span>© <i id="year"></i></span></footer>
+
+<div class="companion" id="companion">
+<div class="bot-shadow"></div>
+<div class="bot">
+<div class="bot-ant"><i></i></div>
+<div class="bot-head"><div class="bot-screen"><div class="bot-eyes"><i></i><i></i></div><div class="bot-mouth"></div></div><i class="ear e1"></i><i class="ear e2"></i></div>
+<div class="bot-neck"></div><div class="bot-body"><b>F<span>AI</span></b><i class="heart"></i></div>
+<div class="bot-arm ba1"></div><div class="bot-arm ba2"></div><div class="bot-foot bf1"></div><div class="bot-foot bf2"></div>
+</div><div class="bot-msg">Hi! I'll explore with you ✦</div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body></html>

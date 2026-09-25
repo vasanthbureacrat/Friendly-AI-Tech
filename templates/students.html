@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Student Hub — Friendly AI Tech</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+{% with messages = get_flashed_messages() %}{% if messages %}<div class="flash">{{ messages[0] }}</div>{% endif %}{% endwith %}
+<body data-world="student"><canvas id="space"></canvas><div class="cursor-light"></div>
+<header><a class="brand" href="{{ url_for('home') }}"><span class="logo"><i></i></span><span>FRIENDLY <b>AI</b> TECH<small>STUDENT INNOVATION HUB</small></span></a><button class="hamb">☰</button><nav><a href="{{ url_for('home') }}">BUSINESS HOME</a><a href="#worlds">TECH WORLDS</a><a href="#internship">INTERNSHIP</a><a href="#projects">PROJECTS</a></nav><a class="top-cta" href="#enquiry">JOIN PROGRAM ↗</a></header>
+<main>
+<section class="student-hero scene" data-scene="studenthome">
+<div class="student-neural parallax-stage"><div class="brain-ring br1"></div><div class="brain-ring br2"></div><div class="brain-core">LEARN<br><b>BUILD</b></div><span class="particle p1">AI</span><span class="particle p2">WEB</span><span class="particle p3">DATA</span><span class="particle p4">CLOUD</span><span class="particle p5">CYBER</span></div>
+<div class="student-copy reveal"><p class="eyebrow purple">FUTURE-READY STUDENT PROGRAMS</p><h1>Choose a<br><em>technology world.</em></h1><p class="lead">Each path opens a different visual world. Learn the technology, understand the workflow and build practical projects.</p><a class="button violet" href="#worlds">CHOOSE YOUR WORLD ↓</a></div>
+</section>
+
+<section class="world-selector scene" id="worlds" data-scene="worlds">
+<div class="section-title reveal"><span>01 / SELECT YOUR PATH</span><h2>Where do you want<br>to <em>build?</em></h2></div>
+<div class="world-paths">
+<a class="world-link reveal" href="{{ url_for('domain') }}?d=ai"><span class="world-icon neural-icon">✦</span><div><small>WORLD 01</small><h3>AI & Machine Learning</h3><p>Models • Deep Learning • Intelligent Systems</p></div><b>ENTER →</b></a>
+<a class="world-link reveal" href="{{ url_for('domain') }}?d=data"><span class="world-icon data-icon">▥</span><div><small>WORLD 02</small><h3>Data Science</h3><p>Analysis • Visualization • Insights</p></div><b>ENTER →</b></a>
+<a class="world-link reveal" href="{{ url_for('domain') }}?d=web"><span class="world-icon web-icon">&lt;/&gt;</span><div><small>WORLD 03</small><h3>Web Development</h3><p>Frontend • Backend • Applications</p></div><b>ENTER →</b></a>
+<a class="world-link reveal" href="{{ url_for('domain') }}?d=cyber"><span class="world-icon cyber-icon">⬡</span><div><small>WORLD 04</small><h3>IT & Cyber Security</h3><p>Systems • Networks • Security</p></div><b>ENTER →</b></a>
+<a class="world-link reveal" href="{{ url_for('domain') }}?d=cloud"><span class="world-icon cloud-icon">☁</span><div><small>WORLD 05</small><h3>Cloud Computing</h3><p>Cloud • Deployment • Infrastructure</p></div><b>ENTER →</b></a>
+<a class="world-link reveal" href="{{ url_for('domain') }}?d=cse"><span class="world-icon code-icon">◫</span><div><small>WORLD 06</small><h3>CSE & Software Development</h3><p>Programming • Software • Projects</p></div><b>ENTER →</b></a>
+</div>
+</section>
+
+<section class="internship scene" id="internship" data-scene="internship">
+<div class="certificate3d"><div><small>FRIENDLY AI TECH</small><strong>CERTIFICATE</strong><p>FUTURE-READY INTERNSHIP PROGRAM</p><i>✦</i></div></div>
+<div class="intern-copy reveal"><p class="eyebrow purple">02 / INTERNSHIP PROGRAM</p><h2>Learn. Build.<br><em>Grow.</em></h2><p>Real-world experience, hands-on projects and expert mentorship.</p><div class="intern-lines"><span><b>15 / 30</b>DAYS PROGRAM</span><span><b>ONLINE / OFFLINE</b>FLEXIBLE MODE</span><span><b>CERTIFICATE</b>PROVIDED</span><span><b>HANDS-ON</b>REAL PROJECTS</span></div></div>
+</section>
+
+<section class="projects scene" id="projects" data-scene="projects"><div class="project-holo"><span>FINAL<br>YEAR</span><i></i><i></i><i></i></div><div class="project-copy reveal"><p class="eyebrow purple">03 / PROJECT DEVELOPMENT</p><h2>Build it.<br>Understand it.<br><em>Present it.</em></h2><p>Final-year projects, mini projects, technical guidance, development support, documentation, PPT preparation and viva support.</p></div></section>
+
+<section class="contact scene" id="enquiry" data-scene="enquiry"><div class="contact-field purplefield"></div><p class="eyebrow purple reveal">04 / STUDENT ENQUIRY</p><h2 class="reveal">Ready to start<br><em>building?</em></h2><form class="cloud-form reveal" method="post" action="{{ url_for('student_enquiry') }}">
+<input name="name" placeholder="Student name" required>
+<input name="college" placeholder="College name" required>
+<input name="email" type="email" placeholder="Email" required>
+<input name="phone" placeholder="Phone" required>
+<select name="domain" required><option value="">Select domain</option><option>AI & Machine Learning</option><option>Data Science</option><option>Web Development</option><option>IT & Cyber Security</option><option>Cloud Computing</option><option>CSE & Software Development</option></select>
+<select name="program" required><option value="">Select program</option><option>Internship</option><option>Final Year Project</option><option>Training</option><option>Mini Project</option></select>
+<select name="duration"><option>15 Days</option><option>30 Days</option></select>
+<select name="mode"><option>Online</option><option>Offline</option></select>
+<button class="button violet" type="submit">SUBMIT ENQUIRY →</button>
+</form></section>
+</main>
+<footer><span>FRIENDLY <b>AI</b> TECH</span><span>STUDENT INNOVATION HUB</span><span>LEARN • BUILD • GROW</span></footer>
+<div class="companion" id="companion"><div class="bot-shadow"></div><div class="bot"><div class="bot-ant"><i></i></div><div class="bot-head"><div class="bot-screen"><div class="bot-eyes"><i></i><i></i></div><div class="bot-mouth"></div></div><i class="ear e1"></i><i class="ear e2"></i></div><div class="bot-neck"></div><div class="bot-body"><b>F<span>AI</span></b><i class="heart"></i></div><div class="bot-arm ba1"></div><div class="bot-arm ba2"></div><div class="bot-foot bf1"></div><div class="bot-foot bf2"></div></div><div class="bot-msg">Pick a world! ✦</div></div>
+<script src="{{ url_for('static', filename='script.js') }}"></script></body></html>
